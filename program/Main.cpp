@@ -3,7 +3,9 @@
 static const string TAG = "Main: ";
 
 int main(int argc, char *argv[]) {
-	// Code goes here.
+	// Time start
+	cout << Utils::timecall("START");
+	
 	ParseData parseData;
 	
 	cout << "Hello, from Main!" << endl;
@@ -11,6 +13,9 @@ int main(int argc, char *argv[]) {
 	string hello = parseData.sayHello();
 	
 	cout << hello << endl;
+	
+	// Time Finish
+	cout << Utils::timecall("FINISH");
 	
 	return 0;
 }
