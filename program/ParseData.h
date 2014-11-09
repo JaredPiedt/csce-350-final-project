@@ -11,11 +11,10 @@ class ParseData {
 		virtual ~ParseData();
 		
 		// General functions here.
-		string sayHello();
+		vector<double> readData(Scanner& inFile);
 		
 	private:
 		// Private variables and functions.
-	
 };
 
 #endif // PARSE_DATA_H
