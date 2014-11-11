@@ -43,6 +43,8 @@ void Compare::setTemplate(string templateFile) {
 }
 
 void Compare::compare() {
+	map<double, int> sumMap;
+	
 	if(this->queryData.size() == 0 || this->templateData.size() == 0) {
 		cout << "You must set the template and query file name"
 		<< " before you can compare the two."
@@ -50,5 +52,30 @@ void Compare::compare() {
 	}
 	
 	// Do comparison...
+	for(int i = 0; i < templateData.size(); i++) {
+		double xySum = 0;
+		double xxSum = 0;
+		double yySum = 0;
+		double sum;
+		
+		for(int k = 0; k < templateData[i].size(); k++) {
+			double x = queryData[k];
+			double y = templateData[i][k];
+			
+			xySum += x * y;
+			xxSum += x * x;
+			yySum += y * y;
+		}
+		
+		sum = xySum / ( sqrt(xxSum) * sqrt(yySum) );
+		sumMap.insert(pair<double, int> (sum, i));
+		
+		cout << "Sum " << i << " = " << sum << endl;
+	}
+	cout << "Top 10 Sums" << endl;
 	
+	for(int i = 0; i < 10; i++)
+	{
+		cout << i + 1 << ": " << sumMap.at(i) << endl;	
+	}
 }

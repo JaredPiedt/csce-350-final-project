@@ -1,6 +1,9 @@
 #ifndef COMPARE_H
 #define COMPARE_H
 
+#include <math.h>
+#include <map>
+
 #include "../Utilities/Utils.h"
 #include "../Utilities/Scanner.h"
 
