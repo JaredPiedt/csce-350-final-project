@@ -37,7 +37,7 @@ void Compare::setTemplate(string templateFile) {
 	ParseData parseData;
 	
 	scanner.openFile(templateFile);
-	this->templateData = parseData.readData(scanner);
+	this->templateData = parseData.readTemplate(scanner);
 	
 	scanner.close();
 }
@@ -50,4 +50,5 @@ void Compare::compare() {
 	}
 	
 	// Do comparison...
+	
 }

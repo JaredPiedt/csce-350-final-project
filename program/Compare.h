@@ -18,7 +18,7 @@ class Compare {
 		
 	private:
 		// Private variables and functions.
-		vector<double> templateData;
+		vector<vector<double> > templateData;
 		vector<double> queryData;
 	
 };

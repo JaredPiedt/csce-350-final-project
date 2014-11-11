@@ -34,3 +34,21 @@ vector<double> ParseData::readData(Scanner& inFile) {
 	
 	return theData;
 }
+
+vector<vector<double> > ParseData::readTemplate(Scanner& inFile) {
+	vector<vector<double> > theData;
+	ScanLine scanLine;
+	while(inFile.hasMoreData()) {
+		scanLine.openString(inFile.nextLine());
+		vector<double> temp;
+		while(scanLine.hasMoreData())
+		{
+			string nextToken = scanLine.next();
+			temp.push_back(atof(nextToken.c_str()));
+		}
+		theData.push_back(temp);		
+	}
+	cout << theData.size() << " vectors" << endl;
+	
+	return theData;
+}

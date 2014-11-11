@@ -3,6 +3,7 @@
 
 #include "../Utilities/Utils.h"
 #include "../Utilities/Scanner.h"
+#include "../Utilities/ScanLine.h"
 
 
 class ParseData {
@@ -12,6 +13,7 @@ class ParseData {
 		
 		// General functions here.
 		vector<double> readData(Scanner& inFile);
+		vector<vector<double> > readTemplate(Scanner& inFile);
 		
 	private:
 		// Private variables and functions.
