@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 		ss << setw(3) << setfill('0') << i;
 		string number = ss.str();
 		
-		string templateFile = "../" + number + "_template.dat";
+  	    string templateFile = "../" + number + "_template.dat";
 		string AU01queryFile = "../" + number + "_AU01_query.dat";
 		string AU12queryFile = "../" + number + "_AU12_query.dat";
 		string AU17queryFile = "../" + number + "_AU17_query.dat";
