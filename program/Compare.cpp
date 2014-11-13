@@ -43,7 +43,10 @@ void Compare::setTemplate(string templateFile) {
 }
 
 void Compare::compare() {
-	map<double, int> sumMap;
+	map<int, double> sumMap;
+	vector<pair<double, int> > sumPairs;
+	map<int, double>::iterator iter;
+	vector<pair<double, int> >::iterator pairIter;
 	
 	if(this->queryData.size() == 0 || this->templateData.size() == 0) {
 		cout << "You must set the template and query file name"
@@ -68,14 +71,25 @@ void Compare::compare() {
 		}
 		
 		sum = xySum / ( sqrt(xxSum) * sqrt(yySum) );
-		sumMap.insert(pair<double, int> (sum, i));
-		
+		sumMap.insert(pair<int, double> (i, sum));
+
 		cout << "Sum " << i << " = " << sum << endl;
 	}
 	cout << "Top 10 Sums" << endl;
 	
+	for(iter = sumMap.begin(); iter != sumMap.end(); ++iter)
+	{
+		sumPairs.push_back(make_pair(iter->second, iter->first));
+	}
+	
+	stable_sort(sumPairs.begin(), sumPairs.end());
+	
+	// for(pairIter = sumPairs.begin(); pairIter != sumPairs.end(); ++pairIter)
+// 	{
+// 		cout << pairIter->first;	
+// 	}
 	for(int i = 0; i < 10; i++)
 	{
-		cout << i + 1 << ": " << sumMap.at(i) << endl;	
+		cout << i + 1 << ": Row " << sumPairs[i].second << " = " << sumPairs[i].first << endl;
 	}
 }

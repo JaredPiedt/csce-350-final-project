@@ -3,6 +3,9 @@
 
 #include <math.h>
 #include <map>
+#include <vector>
+#include <algorithm>
+#include <utility>
 
 #include "../Utilities/Utils.h"
 #include "../Utilities/Scanner.h"
