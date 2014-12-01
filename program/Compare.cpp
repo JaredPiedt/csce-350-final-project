@@ -71,9 +71,7 @@ void Compare::compare() {
 		}
 		
 		sum = xySum / ( sqrt(xxSum) * sqrt(yySum) );
-		sumMap.insert(pair<int, double> (i, sum));
-
-		cout << "Sum " << i << " = " << sum << endl;
+		sumMap.insert(pair<int, double> (i + 1, sum));
 	}
 	cout << "Top 10 Sums" << endl;
 	
@@ -84,11 +82,7 @@ void Compare::compare() {
 	
 	stable_sort(sumPairs.begin(), sumPairs.end());
 	
-	// for(pairIter = sumPairs.begin(); pairIter != sumPairs.end(); ++pairIter)
-// 	{
-// 		cout << pairIter->first;	
-// 	}
-	for(int i = 0; i < 10; i++)
+	for(int i = sumPairs.size() - 1; i > sumPairs.size() - 11; i--)
 	{
 		cout << i + 1 << ": Row " << sumPairs[i].second << " = " << sumPairs[i].first << endl;
 	}

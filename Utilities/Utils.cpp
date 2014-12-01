@@ -704,7 +704,7 @@ string Utils::timecall(const string timestring)
                  timestring.c_str(),usercurrent,systemcurrent, rusage.ru_maxrss);
   returnValue += string(s);
 
-  snprintf(s,80,"TIME %-15s %10.2f u_t %10.2f s_t\n",
+  snprintf(s,80,"TIME %-15s %10.3f u_t %10.3f s_t\n",
                  timestring.c_str(),TIMEusertotal,TIMEsystemtotal);
   returnValue += string(s);
 
