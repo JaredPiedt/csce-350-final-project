@@ -1,3 +1,17 @@
 CSCE 350
 Trevor Hutto & Jared Piedt
 01 December 2014
+
+
+INTRODUCTION TO THE PROBLEM --
+This project is meant to simulate the recognition human facial expressions. A facial expression can be regonized using vectors and comparing them to the template data, we find the top ten closest matches in the template data to determine which images are making certain facial expressions. So the top ten images from the AU01 are most likely surprised faces, the top ten from AU12 are happy faces, and AU17's top ten are more than likely sad faces.
+
+The problem is making a solution that is time effecient. Since every element in a vector has to be compared to another vector to determine it's match, we have N^2 time. Of course there is also a large startup cost for opening and closing so many files.
+
+THE METHODOLOGY and IMPROVING TIME --
+
+PSUEDO CODE --
+
+EXPERIMENTAL RESULTS --
+
+CONCLUSION --
