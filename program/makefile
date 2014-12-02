@@ -1,4 +1,4 @@
-GPP = g++ -O3 -Ofast -ffast-math -Wall
+GPP = g++ -Ofast -Wall
 
 UTILS = ../Utilities
 SCANNER = ../Utilities
