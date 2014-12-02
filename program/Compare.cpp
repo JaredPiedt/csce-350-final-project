@@ -44,7 +44,6 @@ void Compare::setTemplate(string templateFile) {
 }
 
 void Compare::compare() {
-	map<int, double> sumMap;
 	vector<pair<double, int> > sumPairs;
 	map<int, double>::iterator iter;
 	vector<pair<double, int> >::iterator pairIter;
@@ -72,12 +71,7 @@ void Compare::compare() {
 		}
 		
 		sum = xySum / ( sqrt(xxSum) * sqrt(yySum) );
-		sumMap.insert(pair<int, double> (i + 1, sum));
-	}
-	
-	for(iter = sumMap.begin(); iter != sumMap.end(); ++iter)
-	{
-		sumPairs.push_back(make_pair(iter->second, iter->first));
+		sumPairs.push_back(make_pair(sum, i + 1));
 	}
 	
 	stable_sort(sumPairs.begin(), sumPairs.end());

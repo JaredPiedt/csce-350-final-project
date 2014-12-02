@@ -6,4 +6,4 @@ make clean
 
 make
 
-./Aprog
+time ./Aprog
