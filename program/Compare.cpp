@@ -30,6 +30,7 @@ void Compare::setQuery(string queryFile) {
 	this->queryData = queryParser.readData(queryScanner);
 	
 	queryScanner.close();
+	cout << queryFile << ": ";
 }
 
 void Compare::setTemplate(string templateFile) {
@@ -73,7 +74,6 @@ void Compare::compare() {
 		sum = xySum / ( sqrt(xxSum) * sqrt(yySum) );
 		sumMap.insert(pair<int, double> (i + 1, sum));
 	}
-	cout << "Top 10 Sums" << endl;
 	
 	for(iter = sumMap.begin(); iter != sumMap.end(); ++iter)
 	{
@@ -82,8 +82,17 @@ void Compare::compare() {
 	
 	stable_sort(sumPairs.begin(), sumPairs.end());
 	
+	int counter = 1;
 	for(int i = sumPairs.size() - 1; i > sumPairs.size() - 11; i--)
 	{
-		cout << i + 1 << ": Row " << sumPairs[i].second << " = " << sumPairs[i].first << endl;
+		if(counter == 10)
+		{
+			cout << sumPairs[i].second << endl;
+		}
+		else
+		{
+			cout << sumPairs[i].second << ", ";
+		}
+		counter++;
 	}
 }
