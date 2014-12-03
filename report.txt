@@ -1573,6 +1573,6 @@ EXPERIMENTAL RESULTS --
 Time Statistics: 
 	real	0m7.004s
 	user	0m6.822s
-	sys		0m0.164s
+	sys	0m0.164s
 	
 CONCLUSION --
