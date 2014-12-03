@@ -9,6 +9,11 @@ This project is meant to simulate the recognition human facial expressions. A fa
 The problem is making a solution that is time effecient. Since every element in a vector has to be compared to another vector to determine it's match, we have N^2 time. Of course there is also a large startup cost for opening and closing so many files.
 
 THE METHODOLOGY and IMPROVING TIME --
+Improving time is a difficult task considering that there must be n^2 comparisons in order to get the right answer. In our solution, we start by loading the template file, after the template file has been loaded, we load the first query file, compare it to the template, and print the top ten matches. The comparisons are done in our Compare class, and the files are opened and closed in our Main class. We repeat this process until all of the files have been examined and their results printed.
+
+We have a number of tricks to decrease the execution time. The first being applied at compile time. We use the 0Fast optimizaiton flag in order to ensure that our program can run as fast as possible. Other than optimization, our speed up techniques include the stable_sort, and minimizing output. The stable sort is among the fastest sorting algorithms in C++. We use it to sort the list of pairs as they come out of comparison functions. Once the pairs of 'rows' and 'similarity' are sorted, we take the last ten pairs in the vector to display the top ten.
+
+Output is another crucial piece of our program. We did our best to have the least amount of output as possible. Output is expensive and slows the CPU down considerably. By minizing the results printed to the console, we were able to speed up our programs CPU time considerably.
 
 PSUEDO CODE --
 
