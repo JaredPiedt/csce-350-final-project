@@ -17,6 +17,24 @@ Output is another crucial piece of our program. We did our best to have the leas
 
 PSUEDO CODE --
 
+// Compare function
+void function Compare
+	for n in template
+		for k in template[n]
+			x <- queryData[k]
+			y <- tempalate[n][k]
+			xxSum += x*x
+			yySum += y*y
+			xySum += x*y
+		// Calculate similarity
+		sum <- xySum / (sqrt(xxSum) * sqrt(yySum))
+		solution[n] <- sum
+	// Sort by desc
+	stable_sort(solution)
+	
+	// Print the top ten.
+	print solution[1:10]
+
 EXPERIMENTAL RESULTS --
 ../001_AU01_query.dat: 
     1:   8 -- 0.426736
@@ -1573,6 +1591,6 @@ EXPERIMENTAL RESULTS --
 Time Statistics: 
 	real	0m7.004s
 	user	0m6.822s
-	sys		0m0.164s
+	sys	0m0.164s
 	
 CONCLUSION --
