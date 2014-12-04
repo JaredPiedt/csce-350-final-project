@@ -1594,3 +1594,4 @@ Time Statistics:
 	sys	0m0.164s
 	
 CONCLUSION --
+This program taught us the importance of optimization. In the past, programs in other classes have focused only on correctness. Often times optimization is overlooked, but this program forced us to think about ways to improve efficiency throughout the coding process. In order to improve efficiency we tried to minimize output as much as possible because I/O takes up a substantial amount of CPU time. We also used the 0fast optimization flag in our make file and a sorting algorithm in order to improve efficiency. This program was a good learning experience and will encourage us to not overlook optimization in future projects.
