@@ -30,7 +30,6 @@ vector<double> ParseData::readData(Scanner& inFile) {
 	while(inFile.hasMoreData()) {
 		theData.push_back(inFile.nextDouble());
 	}
-	cout << theData.size() << " elements" << endl;
 	
 	return theData;
 }
@@ -46,9 +45,8 @@ vector<vector<double> > ParseData::readTemplate(Scanner& inFile) {
 			string nextToken = scanLine.next();
 			temp.push_back(atof(nextToken.c_str()));
 		}
-		theData.push_back(temp);		
+		theData.push_back(temp);
 	}
-	cout << theData.size() << " vectors" << endl;
 	
 	return theData;
 }

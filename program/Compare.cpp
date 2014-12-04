@@ -30,6 +30,7 @@ void Compare::setQuery(string queryFile) {
 	this->queryData = queryParser.readData(queryScanner);
 	
 	queryScanner.close();
+	cout << queryFile << ": ";
 }
 
 void Compare::setTemplate(string templateFile) {
@@ -43,7 +44,6 @@ void Compare::setTemplate(string templateFile) {
 }
 
 void Compare::compare() {
-	map<int, double> sumMap;
 	vector<pair<double, int> > sumPairs;
 	map<int, double>::iterator iter;
 	vector<pair<double, int> >::iterator pairIter;
@@ -71,25 +71,22 @@ void Compare::compare() {
 		}
 		
 		sum = xySum / ( sqrt(xxSum) * sqrt(yySum) );
-		sumMap.insert(pair<int, double> (i, sum));
-
-		cout << "Sum " << i << " = " << sum << endl;
-	}
-	cout << "Top 10 Sums" << endl;
-	
-	for(iter = sumMap.begin(); iter != sumMap.end(); ++iter)
-	{
-		sumPairs.push_back(make_pair(iter->second, iter->first));
+		sumPairs.push_back(make_pair(sum, i + 1));
 	}
 	
 	stable_sort(sumPairs.begin(), sumPairs.end());
 	
-	// for(pairIter = sumPairs.begin(); pairIter != sumPairs.end(); ++pairIter)
-// 	{
-// 		cout << pairIter->first;	
-// 	}
-	for(int i = 0; i < 10; i++)
+	int counter = 1;
+	for(int i = sumPairs.size() - 1; i > sumPairs.size() - 11; i--)
 	{
-		cout << i + 1 << ": Row " << sumPairs[i].second << " = " << sumPairs[i].first << endl;
+		if(counter == 10)
+		{
+			cout << sumPairs[i].second << endl;
+		}
+		else
+		{
+			cout << sumPairs[i].second << ", ";
+		}
+		counter++;
 	}
 }

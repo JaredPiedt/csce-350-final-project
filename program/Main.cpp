@@ -19,6 +19,8 @@ int main(int argc, char *argv[]) {
 	// Time start
 	cout << Utils::timecall("START");
 	
+	string outputString = "";
+	
 	for(int i = 1; i <= NUMBER_OF_FILES; ++i) {
 	
 		// so that we can have leading zeros.
@@ -43,6 +45,7 @@ int main(int argc, char *argv[]) {
 		compare.compare();
 	}
 	
+	cout << outputString << endl;
 	// Time Finish
 	cout << Utils::timecall("FINISH");
 	
