@@ -30,7 +30,7 @@ void Compare::setQuery(string queryFile) {
 	this->queryData = queryParser.readData(queryScanner);
 	
 	queryScanner.close();
-	cout << queryFile << ": ";
+	cout << queryFile.substr(7) << ": ";
 }
 
 void Compare::setTemplate(string templateFile) {
