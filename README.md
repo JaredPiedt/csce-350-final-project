@@ -1,6 +1,8 @@
 CSCE 350 Final Project
 ============================
 
+A C++ program that computes a facial recognition algorithm.
+
 We have created a shell script in the main directory to run our program. When this shell script is executed, the program will be cleaned, made, and run. At the end of execution, the time results will be printed to the console window.
 
 The dat files should be placed into the dat folder located in the main directory.
