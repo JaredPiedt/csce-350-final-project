@@ -5,9 +5,9 @@ We have created a shell script in the main directory to run our program. When th
 
 The dat files should be placed into the dat folder located in the main directory.
 
-To run the program:
-	1.) Copy the data files into the dat folder.
-	2.) execute ./run.sh in a bash terminal.
+### Run program
+1. Copy the data files into the dat folder.
+2. execute ./run.sh in a bash terminal.
 
 For questions regarding execution, please contact:
 	huttotw@email.sc.edu
