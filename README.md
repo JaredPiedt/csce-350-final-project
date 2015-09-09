@@ -1,4 +1,4 @@
-CSCE350ProgrammingAssignment
+CSCE 350 Final Project
 ============================
 
 We have created a shell script in the main directory to run our program. When this shell script is executed, the program will be cleaned, made, and run. At the end of execution, the time results will be printed to the console window.
